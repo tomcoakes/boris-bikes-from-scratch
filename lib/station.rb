@@ -4,8 +4,6 @@ class Station
 
   include BikeContainer
 
-  attr_reader :bike_rack
-
   DEFAULT_CAPACITY = 10
 
   def initialize(options = {})
