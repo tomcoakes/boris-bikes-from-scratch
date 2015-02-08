@@ -10,15 +10,22 @@ class Van
 
 
 # THIS METHOD GETS THE STATION TO DO THE RELEASING ON ITS OWN END
-  def load_broken_bikes(station)
+  def load_broken_bikes_from(station)
     station.release_broken_bikes.each do |bike|
       bike_rack << bike
     end
   end
 
+  def unload_broken_bikes_at_the(location)
+    bike_rack.each do |broken_bike|
+      location.accept(broken_bike)
+      bike_rack.delete(broken_bike)
+    end
+  end
+
 # AN ALTERNATIVE WAY TO DO THIS WOULD BE AS FOLLOWS, BUT IT CALLS ANOTHER
 # CLASS'S METHOD WITHIN ITS OWN METHOD, WHICH I THOUGHT WAS BAD
-  # def load_broken_bikes(station)
+  # def load_broken_bikes_from(station)
   #   station.broken_bikes.each do |bike|
   #     self.dock(station.release(bike))
   #   end
