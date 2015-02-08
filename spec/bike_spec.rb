@@ -15,7 +15,7 @@ describe Bike do
   end
 
   it "should be able to be fixed" do
-    broken_bike.fix
+    broken_bike.fix!
     expect(broken_bike).not_to be_broken
   end
 
