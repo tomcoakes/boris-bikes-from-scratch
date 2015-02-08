@@ -15,7 +15,6 @@ describe Station do
   it "should release broken bikes when visited by a van" do
     station.dock(broken_bike)
     station.dock(working_bike)
-    expect(station.bike_rack).to eq([broken_bike, working_bike])
     station.release_broken_bikes
     expect(station.bike_rack).to eq([working_bike])
   end
