@@ -14,7 +14,7 @@ class Station
 
   def release_broken_bikes
     self.broken_bikes.each do |bike|
-     p bike_rack.delete(bike)
+      bike_rack.delete(bike)
     end
   end
 
