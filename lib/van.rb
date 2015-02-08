@@ -5,14 +5,14 @@ class Van
 
   def initialize
     @capacity = 10
+    @bike_rack = []
   end
 
-  def location
-    @location ||= "garage"
-  end
-
-  def travel_to(destination)
-    @location = destination
+  def load_broken_bikes(station)
+    station.release_broken_bikes.each do |bike|
+      @bike_rack << bike
+    end
+    @bike_rack # Can I possibly get rid of this line?
   end
 
 end

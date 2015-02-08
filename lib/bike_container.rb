@@ -19,7 +19,7 @@ module BikeContainer
   end
 
   def bike_rack
-    @bike_rack ||= []
+    @bike_rack
   end
 
 end

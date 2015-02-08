@@ -2,6 +2,11 @@ require 'bike_container'
 
 class ObjectHolder
   include BikeContainer
+
+  def initialize
+    @bike_rack = []
+  end
+
 end
 
 

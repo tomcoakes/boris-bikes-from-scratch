@@ -5,25 +5,15 @@ describe Van do
   let(:van) {Van.new}
   let(:station) {double :station}
   let(:garage) {double :garage}
+  let(:broken_bike) {double :broken_bike, broken?: true}
+  let(:working_bike) {double :working_bike, broken?: false}
 
 
-  it "should know where it is located" do
-    expect(van.location).to eq("garage")
-  end
-
-  it "should start out at the garage" do
-    expect(van.location).to eq("garage")
-  end
-
-  it 'should be able to travel to garage' do
-    van.travel_to("garage")
-    expect(van.location).to eq("garage")
-  end
-
-  it "should be able to travel to the docking station" do
-    expect(van.location).to eq("garage")
-    van.travel_to(station)
-    expect(van.location).to eq(station)
+  it "should be able to load broken bikes from the station" do
+    expect(van.bike_rack).to eq([])
+    expect(station).to receive(:release_broken_bikes).and_return([broken_bike])
+    van.load_broken_bikes(station)
+    expect(van.bike_rack).to eq([broken_bike])
   end
 
 end
