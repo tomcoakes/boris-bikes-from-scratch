@@ -2,6 +2,8 @@ module BikeContainer
 
   DEFAULT_CAPACITY = 10
 
+  attr_reader :bike_rack
+
   def dock(bike_to_be_docked)
     bike_rack << bike_to_be_docked
   end
@@ -16,10 +18,6 @@ module BikeContainer
 
   def capacity
     @capacity ||= DEFAULT_CAPACITY
-  end
-
-  def bike_rack
-    @bike_rack
   end
 
 end

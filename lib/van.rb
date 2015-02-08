@@ -12,7 +12,7 @@ class Van
 # THIS METHOD GETS THE STATION TO DO THE RELEASING ON ITS OWN END
   def load_broken_bikes(station)
     station.release_broken_bikes.each do |bike|
-      @bike_rack << bike
+      bike_rack << bike
     end
   end
 
